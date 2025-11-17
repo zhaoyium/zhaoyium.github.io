@@ -1,65 +1,26 @@
 ---
 layout: page
-title: projects
+title: "Projects"
 permalink: /projects/
-description: A growing collection of your cool projects.
-nav: true
-nav_order: 3
-display_categories: [work, fun]
-horizontal: false
+nav_order: 4
 ---
 
-<!-- pages/projects.md -->
-<div class="projects">
-{% if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% endfor %}
+# Projects
 
-{% else %}
+## Acoustic Micropatterning Platform
+A customizable acoustic field that patterns hPSCs into controlled geometries.  
+- Non-invasive  
+- Tunable pattern sizes  
+- Compatible with long-term culture and live imaging  
+- Used to study early epiblast organization
 
-<!-- Display projects without categories -->
+---
 
-{% assign sorted_projects = site.projects | sort: "importance" %}
+## Microfluidic Embryoid Culture System
+A microfluidic device that mimics nutrient flow and mechanical boundaries found in early human embryos.  
+Supports human explant culture with precise modulation of spatial cues.
 
-  <!-- Generate cards for each project -->
+---
 
-{% if page.horizontal %}
-
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-{% endif %}
-</div>
+## Organoid Morphogenesis in Engineered Environments
+Exploring how physical and biochemical microenvironments influence early organoid shape, identity, and organization.
